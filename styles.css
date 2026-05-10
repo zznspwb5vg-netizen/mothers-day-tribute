@@ -39,11 +39,6 @@ html, body {
   justify-content: space-between;
   padding: 0 1.4rem;
   z-index: 30;
-  pointer-events: none;
-}
-
-.progress .nav-btn {
-  pointer-events: auto;
 }
 
 .progress__dots {

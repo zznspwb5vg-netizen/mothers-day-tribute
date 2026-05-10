@@ -75,8 +75,12 @@ function sync() {
 }
 
 /* ── Button listeners ── */
-btnNext.addEventListener('click', () => goTo(current + 1));
-btnBack.addEventListener('click', () => goTo(current - 1));
+function addBtn(el, fn) {
+  el.addEventListener('click', fn);
+  el.addEventListener('touchend', e => { e.preventDefault(); if (!el.disabled) fn(); }, { passive: false });
+}
+addBtn(btnNext, () => goTo(current + 1));
+addBtn(btnBack, () => goTo(current - 1));
 
 /* ── Keyboard ── */
 document.addEventListener('keydown', e => {

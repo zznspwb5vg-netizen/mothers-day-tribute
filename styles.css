@@ -323,6 +323,7 @@ html, body {
 .nav-btn--back {
   background: rgba(44,36,32,0.08);
   color: #4A3830;
+  touch-action: manipulation;
 }
 
 .nav-btn--back:hover { background: rgba(44,36,32,0.13); }
@@ -331,6 +332,8 @@ html, body {
   background: var(--deck-accent, #C4857A);
   color: #fff;
   margin-left: auto;
+  pointer-events: auto;
+  touch-action: manipulation;
 }
 
 .nav-btn--next:hover { filter: brightness(1.08); }

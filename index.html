@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Mother's Day, Mom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=17">
+</head>
+<body>
+
+<div class="deck" id="deck">
+
+  <div class="progress" id="progress">
+    <div class="progress__dots" id="progress-dots"></div>
+    <button class="nav-btn nav-btn--next" id="btn-next" aria-label="Next slide">
+      Next
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+
+  <!-- ═══ SLIDE 0: Intro ═══ -->
+  <div class="slide slide--text-only" id="slide-0"
+       style="--accent:#C4857A; --accent-bg:#FAF6EF;" data-wm="MOM">
+    <div class="slide__inner slide__inner--center">
+      <p class="slide__eyebrow">May 2026</p>
+      <h1 class="slide__hero">
+        Happy<br><em>Mother's<br>Day,</em><br>Mom.
+      </h1>
+      <p class="slide__copy">From three people who think you're basically a superhero.</p>
+      <p class="slide__byline">— Viz, Naana, and Veeksha</p>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 1: Best Mom Ever ═══ -->
+  <div class="slide" id="slide-1"
+       style="--accent:#C8960C; --accent-bg:#FFFAE2;" data-wm="BEST">
+    <div class="slide__inner">
+      <div class="slide__text">
+        <span class="slide__emoji" aria-hidden="true">🏆</span>
+        <h2 class="slide__title">Best Mom Ever</h2>
+        <p class="slide__copy">Best mom ever, gold standard, and the benchmark every other mom gets compared to and comes up short. You are pretty, smart, empathetic, sweet, kind, patient, and everything we could ever want in a mom.</p>
+      </div>
+      <div class="slide__photos slide__photos--4">
+        <img class="slide__photo" src="images/IMG_8911.jpg" alt="">
+        <img class="slide__photo" src="images/IMG_4580_2_(copy).jpg" alt="">
+        <img class="slide__photo" src="images/IMG_3758.jpg" alt="">
+        <img class="slide__photo" src="images/IMG_7481.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 2: Prettiest Mom ═══ -->
+  <div class="slide" id="slide-2"
+       style="--accent:#C4857A; --accent-bg:#FBF0EC;" data-wm="PRETTY">
+    <div class="slide__inner">
+      <div class="slide__text">
+        <span class="slide__emoji" aria-hidden="true">✨</span>
+        <h2 class="slide__title">Prettiest Mom</h2>
+        <p class="slide__copy">You light up every room with your stories, your laugh, and the way you make everyone around you laugh too. You always look effortlessly beautiful, whether you're wearing the cutest outfit to work or absolutely carrying in a saree.</p>
+      </div>
+      <div class="slide__photos slide__photos--3">
+        <img class="slide__photo" src="images/IMG_7803.jpg" alt="">
+        <img class="slide__photo" src="images/IMG_8158.jpg" alt="">
+        <img class="slide__photo" src="images/IMG_2687.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 3: Funniest Mom ═══ -->
+  <div class="slide" id="slide-3"
+       style="--accent:#4E8868; --accent-bg:#EDF3F0;" data-wm="FUNNY">
+    <div class="slide__inner">
+      <div class="slide__text">
+        <span class="slide__emoji" aria-hidden="true">😂</span>
+        <h2 class="slide__title">Funniest Mom</h2>
+        <p class="slide__copy">You are always cracking the funniest, silliest jokes, from &#8220;This is Abdullah&#8221; to &#8220;Shake Abdullah,&#8221; and somehow turning every random moment into a game for the gamers.</p>
+      </div>
+      <div class="slide__photos slide__photos--3col">
+        <img class="slide__photo" src="images/IMG_9893.jpg" alt="">
+        <img class="slide__photo" src="images/IMG_1359.jpg" alt="">
+        <img class="slide__photo" src="images/View recent photos.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 4: Coolest Mom ═══ -->
+  <div class="slide" id="slide-4"
+       style="--accent:#C06830; --accent-bg:#FBF1EA;" data-wm="COOL">
+    <div class="slide__inner">
+      <div class="slide__text">
+        <span class="slide__emoji" aria-hidden="true">😎</span>
+        <h2 class="slide__title">Coolest Mom</h2>
+        <p class="slide__copy">You can dance, speak so many languages, make beautiful art, and somehow become friends with everyone you meet. You are so easy to talk to, so fun to hang out with, and you always bring the best energy wherever you go.</p>
+      </div>
+      <div class="slide__photos slide__photos--3col">
+        <img class="slide__photo" src="images/IMG_7569.jpg" alt="">
+        <img class="slide__photo" src="images/IMG_3758.jpg" alt="">
+        <img class="slide__photo" src="images/View recent photos 2.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 5: Alien Lover ═══ -->
+  <div class="slide" id="slide-5"
+       style="--accent:#7055A0; --accent-bg:#F3EFF8;" data-wm="ALIEN">
+    <div class="slide__inner">
+      <div class="slide__text">
+        <span class="slide__emoji" aria-hidden="true">👽</span>
+        <h2 class="slide__title">Alien Lover</h2>
+        <p class="slide__copy">Our alien mother, alien expert, and keeper of all alien facts. We love you so much, even if we're still not fully sure what planet you came from.</p>
+      </div>
+      <div class="slide__photos slide__photos--2">
+        <img class="slide__photo" src="images/IMG_5031.jpg" alt="">
+        <img class="slide__photo" src="images/IMG_1325.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 6: Biggest Heart ═══ -->
+  <div class="slide" id="slide-6"
+       style="--accent:#B03060; --accent-bg:#F8ECEF;" data-wm="HEART">
+    <div class="slide__inner">
+      <div class="slide__text">
+        <span class="slide__emoji" aria-hidden="true">❤️</span>
+        <h2 class="slide__title">Biggest Heart</h2>
+        <p class="slide__copy">The list of people you have shown up for, fed, called, helped, and worried about could fill a room: me, Viz, Naana, your parents, aunts, uncles, cousins, friends, coworkers, and basically everyone lucky enough to know you.</p>
+      </div>
+      <div class="slide__photos slide__photos--3">
+        <img class="slide__photo" src="images/IMG_0345.jpg" alt="">
+        <img class="slide__photo" src="images/IMG_6696.jpg" alt="">
+        <img class="slide__photo" src="images/619ffaeb-6320-4e01-aebd-ddfc2ad0e2df.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 7: Chaos Coordinator ═══ -->
+  <div class="slide" id="slide-7"
+       style="--accent:#2A8888; --accent-bg:#EAF5F5;" data-wm="CHAOS">
+    <div class="slide__inner">
+      <div class="slide__text">
+        <span class="slide__emoji" aria-hidden="true">⚡</span>
+        <h2 class="slide__title">Chaos Coordinator</h2>
+        <p class="slide__copy">You somehow keep everyone fed, cared for, and in one piece, while acting like it's no big deal. You make our favorite foods, do everything for everyone, and keep showing up no matter how tired you are.</p>
+      </div>
+      <div class="slide__photos slide__photos--4">
+        <img class="slide__photo" src="images/IMG_8275.jpg" alt="">
+        <img class="slide__photo" src="images/IMG_0402.jpg" alt="">
+        <img class="slide__photo" src="images/IMG_3341.jpg" alt="">
+        <img class="slide__photo" src="images/IMG_1325.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 8: Closing ═══ -->
+  <div class="slide slide--text-only" id="slide-8"
+       style="--accent:#C4857A; --accent-bg:#FAF6EF;" data-wm="MOM">
+    <div class="slide__inner slide__inner--center">
+      <h2 class="slide__hero">
+        Happy<br><em>Mother's<br>Day.</em>
+      </h2>
+      <p class="slide__copy">We love you more than this little page can say.</p>
+      <div class="slide__signed">
+        <span class="slide__signed-label">With love,</span>
+        <span class="slide__signed-names">Viz, Naana, and Veeksha</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="deck__nav" id="deck-nav" aria-label="Slide navigation">
+    <button class="nav-btn nav-btn--back" id="btn-back" disabled aria-label="Previous slide">
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M13 4l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back
+    </button>
+  </nav>
+
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

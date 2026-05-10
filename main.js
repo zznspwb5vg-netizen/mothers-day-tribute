@@ -1,9 +1,8 @@
 const TOTAL   = 9;
 const slides  = Array.from(document.querySelectorAll('.slide'));
-const btnNext = document.getElementById('btn-next');
-const btnBack = document.getElementById('btn-back');
 const dotsEl  = document.getElementById('progress-dots');
-const countEl = null;
+const progressEl = document.getElementById('progress');
+const navEl   = document.getElementById('deck-nav');
 const deck    = document.getElementById('deck');
 
 let current = 0;
@@ -16,6 +15,23 @@ slides.forEach((_, i) => {
   dot.addEventListener('click', () => goTo(i));
   dotsEl.appendChild(dot);
 });
+
+/* ── Build Next button (in progress bar, top right) ── */
+const btnNext = document.createElement('button');
+btnNext.className = 'nav-btn nav-btn--next';
+btnNext.setAttribute('aria-label', 'Next slide');
+btnNext.innerHTML = 'Next <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+btnNext.addEventListener('click', () => goTo(current + 1));
+progressEl.appendChild(btnNext);
+
+/* ── Build Back button (in nav bar, bottom left) ── */
+const btnBack = document.createElement('button');
+btnBack.className = 'nav-btn nav-btn--back';
+btnBack.setAttribute('aria-label', 'Previous slide');
+btnBack.innerHTML = '<svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M13 4l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Back';
+btnBack.disabled = true;
+btnBack.addEventListener('click', () => goTo(current - 1));
+navEl.appendChild(btnBack);
 
 /* ── Initialise ── */
 slides[0].classList.add('active');
@@ -32,11 +48,10 @@ function goTo(next) {
   const inner = slide.querySelector('.slide__inner');
   if (inner) inner.scrollTop = 0;
 
-  /* Re-trigger title pop */
   const titles = slide.querySelectorAll('.slide__title, .slide__hero');
   titles.forEach(el => {
     el.classList.remove('pop');
-    void el.offsetWidth;          // force reflow
+    void el.offsetWidth;
     el.classList.add('pop');
   });
 
@@ -44,43 +59,28 @@ function goTo(next) {
 }
 
 function sync() {
-  /* Dots */
   dotsEl.querySelectorAll('.progress__dot').forEach((d, i) =>
     d.classList.toggle('active', i === current)
   );
 
-  /* Count */
-  if (countEl) countEl.textContent = `${current + 1} / ${TOTAL}`;
-
-  /* Back button */
   btnBack.disabled = current === 0;
 
-  /* Next button */
   if (current === TOTAL - 1) {
     btnNext.innerHTML = '❤️';
     btnNext.classList.add('nav-btn--done');
     btnNext.disabled = true;
   } else {
-    btnNext.innerHTML = `Next <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+    btnNext.innerHTML = 'Next <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     btnNext.classList.remove('nav-btn--done');
     btnNext.disabled = false;
   }
 
-  /* Sync accent colour to deck for nav + dots */
   const s = slides[current];
   const accent   = s.style.getPropertyValue('--accent').trim()    || '#C4857A';
   const accentBg = s.style.getPropertyValue('--accent-bg').trim() || '#FAF6EF';
   deck.style.setProperty('--deck-accent',    accent);
   deck.style.setProperty('--deck-accent-bg', accentBg);
 }
-
-/* ── Button listeners ── */
-function addBtn(el, fn) {
-  el.addEventListener('click', fn);
-  el.addEventListener('touchend', e => { e.preventDefault(); if (!el.disabled) fn(); }, { passive: false });
-}
-addBtn(btnNext, () => goTo(current + 1));
-addBtn(btnBack, () => goTo(current - 1));
 
 /* ── Keyboard ── */
 document.addEventListener('keydown', e => {
